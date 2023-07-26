@@ -3,11 +3,18 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar'
 
 function App() {
+
+  const search = () =>{
+
+  };
+
   return (
     <div >
       <h1>Ja<span className="Blue">m</span><span className="White">m</span><span className="Red">m</span>ing</h1>
+
       <div className="App">
-        <SearchBar />
+
+        <SearchBar onSearch={search}/>
         <div className="App-playlist">
 
           {/**
