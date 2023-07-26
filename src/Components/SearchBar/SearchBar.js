@@ -16,7 +16,9 @@ function SearchBar(props){
     return (
         <div className ="SearchBar">
             <input placeholder="Entre una canción, álbum o artista" onChange={handleChange}/>
-            <button className="SearchButton" onClick={search}>BUSCAR</button>
+            <button className="SearchButton" onClick={search}>
+                BUSCAR
+            </button>
         </div>
     );
     
