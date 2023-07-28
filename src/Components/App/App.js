@@ -6,7 +6,7 @@ import Playlist from '../PlayList/PlayList';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
-  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistName, setPlaylistName] = useState("Nuevo Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const updateName = (name) =>{
@@ -15,7 +15,7 @@ function App() {
 
   const search = (input) =>{
     //search in spotify the given input
-    //update searchResults
+    //update searchResuls
   };
 
   const addTrack = (track) =>{
@@ -34,6 +34,9 @@ function App() {
 
   }
 
+  const savePlaylist = () =>{
+    const uris = playlistTracks.map((track)=> track.uri);
+  }
 
   return (
     <div >
@@ -51,6 +54,7 @@ function App() {
             playlistTracks={playlistTracks}
             onNameChange={updateName}
             onRemove={removeTrack}
+            onSave={savePlaylist}
           />
 
         </div>
