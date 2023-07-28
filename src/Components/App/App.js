@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
@@ -6,10 +6,22 @@ import Playlist from '../PlayList/PlayList';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  const updateName = (name) =>{
+      setPlaylistName(name);
+  }
 
   const search = (input) =>{
     //search in spotify the given input
+    //update searchResults
   };
+
+  const addTrack = (track) =>{
+
+  }
+
 
   return (
     <div >
@@ -21,13 +33,12 @@ function App() {
 
         <div className="App-playlist">
 
-          {/**
-           * Add a SearchResults
-           * Add a Playlist
-           */}
-
-          <SearchResults searchResults={searchResults}/>
-          <Playlist />
+          <SearchResults searchResults={searchResults} onAdd={addTrack}/>
+          <Playlist 
+            playlistName={playlistName}
+            playlistTracks={playlistTracks}
+            onNameChange={updateName}
+          />
 
         </div>
       </div>
