@@ -1,6 +1,8 @@
 import React from 'react';
 import Track from '../Track/Track';
 
+import './Tracklist.css';
+
 const TrackList = (props) =>{
 
     return (
@@ -10,6 +12,7 @@ const TrackList = (props) =>{
                     <Track 
                         track={track}
                         key={track.id}
+                        onAdd={props.onAdd}
                     />
                 );
             })}
