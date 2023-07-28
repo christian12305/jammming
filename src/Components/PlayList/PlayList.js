@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import TrackList from '../TrackList/Tracklist';
 
 const PlayList = (props) =>{
