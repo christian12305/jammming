@@ -21,7 +21,7 @@ function App() {
 
   const addTrack = (track) =>{
 
-    if(!playlistTracks.includes(track.id)){
+    if(!playlistTracks.includes(track)){
       setPlaylistTracks((prev)=> [...prev, track]);
     }
 
@@ -29,7 +29,7 @@ function App() {
 
   const removeTrack = (track) =>{
 
-    if(playlistTracks.includes(track.id)){
+    if(playlistTracks.includes(track)){
       setPlaylistTracks((prev) => 
         prev.filter((currTrack)=> currTrack.id !== track.id));
     }
