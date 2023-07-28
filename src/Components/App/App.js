@@ -23,7 +23,15 @@ function App() {
     if(!playlistTracks.includes(track.id)){
       setPlaylistTracks((prev)=> [...prev, track]);
     }
-    
+
+  }
+
+  const removeTrack = (track) =>{
+
+    if(playlistTracks.includes(track.id)){
+      setPlaylistTracks((prev)=> prev.filter((currTrack)=> currTrack.id !== track.id));
+    }
+
   }
 
 
@@ -42,6 +50,7 @@ function App() {
             playlistName={playlistName}
             playlistTracks={playlistTracks}
             onNameChange={updateName}
+            onRemove={removeTrack}
           />
 
         </div>

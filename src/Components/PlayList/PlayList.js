@@ -12,6 +12,7 @@ const PlayList = (props) =>{
             <input onChange={handleChange}/>
             <TrackList 
                 tracks={props.playlistTracks}
+                onRemove={props.onRemove}
             />
         </div>
     );

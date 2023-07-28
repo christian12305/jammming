@@ -6,6 +6,10 @@ const Track = (props) =>{
         props.onAdd(props.track);
     }
 
+    const removeTrack = () =>{
+        props.onRemove(props.track);
+    }
+
     return (
         <div className="Track">
             <div className="Track-information">
@@ -14,6 +18,7 @@ const Track = (props) =>{
                 <p>{props.track.album}</p>
             </div>
             <button className="Track-action" onClick={addTrack}>+</button>
+            <button className="Track-action" onClick={removeTrack}>-</button>
         </div>
     );
 }
