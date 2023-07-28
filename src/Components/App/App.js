@@ -30,7 +30,8 @@ function App() {
   const removeTrack = (track) =>{
 
     if(playlistTracks.includes(track.id)){
-      setPlaylistTracks((prev)=> prev.filter((currTrack)=> currTrack.id !== track.id));
+      setPlaylistTracks((prev) => 
+        prev.filter((currTrack)=> currTrack.id !== track.id));
     }
 
   }

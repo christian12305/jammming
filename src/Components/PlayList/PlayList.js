@@ -12,6 +12,7 @@ const PlayList = (props) =>{
             <input onChange={handleChange} defaultValue={props.playlistName}/>
             <TrackList 
                 tracks={props.playlistTracks}
+                isRemovable={true}
                 onRemove={props.onRemove}
             />
             <button className="Playlist-save" onClick={props.onSave}>Save to Spotify</button>

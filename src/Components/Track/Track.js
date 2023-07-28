@@ -10,6 +10,18 @@ const Track = (props) =>{
         props.onRemove(props.track);
     }
 
+    const addFunctionality = () =>{
+        if(props.isRemovable){
+            return(
+                <button className="Track-action" onClick={removeTrack}>-</button>
+            )
+        }
+        return(
+            <button className="Track-action" onClick={addTrack}>+</button>
+        )
+
+    }
+
     return (
         <div className="Track">
             <div className="Track-information">
@@ -17,8 +29,7 @@ const Track = (props) =>{
                 <p>{props.track.artist}</p>
                 <p>{props.track.album}</p>
             </div>
-            <button className="Track-action" onClick={addTrack}>+</button>
-            <button className="Track-action" onClick={removeTrack}>-</button>
+            {addFunctionality()}
         </div>
     );
 }
