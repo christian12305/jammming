@@ -9,13 +9,13 @@ function SearchBar(props){
         props.onSearch(input);
     }
 
-    const handleChange = () =>{
-        
+    const handleChange = (event) =>{
+        setInput(event.target.value);
     }
 
     return (
         <div className ="SearchBar">
-            <input placeholder="Entre una canción, álbum o artista" onChange={handleChange}/>
+            <input placeholder="Entre el título de una canción" onChange={handleChange}/>
             <button className="SearchButton" onClick={search}>
                 BUSCAR
             </button>

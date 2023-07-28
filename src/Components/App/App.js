@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../PlayList/PlayList';
+import Spotify from '../../Modules/Spotify';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -14,9 +15,9 @@ function App() {
   }
 
   const search = (input) =>{
-    //search in spotify the given input
-    //update searchResuls
-  };
+    Spotify.search(input).then(setSearchResults);
+
+  }
 
   const addTrack = (track) =>{
 
