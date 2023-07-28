@@ -2,7 +2,9 @@ import React from 'react';
 
 const Track = (props) =>{
 
-    
+    const addTrack = () =>{
+        props.onAdd(props.track);
+    }
 
     return (
         <div className="Track">
@@ -11,6 +13,7 @@ const Track = (props) =>{
                 <p>{props.track.artist}</p>
                 <p>{props.track.album}</p>
             </div>
+            <button className="Track-action" onClick={addTrack}>+</button>
         </div>
     );
 }

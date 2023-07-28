@@ -20,6 +20,10 @@ function App() {
 
   const addTrack = (track) =>{
 
+    if(!playlistTracks.includes(track.id)){
+      setPlaylistTracks((prev)=> [...prev, track]);
+    }
+    
   }
 
 
