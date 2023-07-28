@@ -15,7 +15,9 @@ const PlayList = (props) =>{
                 isRemovable={true}
                 onRemove={props.onRemove}
             />
-            <button className="Playlist-save" onClick={props.onSave}>Save to Spotify</button>
+            <button className="Playlist-save" onClick={props.onSave}>
+                Save to Spotify
+            </button>
         </div>
     );
 }
