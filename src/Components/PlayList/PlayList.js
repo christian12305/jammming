@@ -1,4 +1,5 @@
 import TrackList from '../TrackList/Tracklist';
+import './Playlist.css'
 
 const PlayList = (props) =>{
 
@@ -8,7 +9,7 @@ const PlayList = (props) =>{
     
     return (
         <div className="Playlist">
-            <input onChange={handleChange} defaultValue={props.playlistName}/>
+            <input onChange={handleChange} value={props.playlistName} onFocus={(e) => e.target.select()}/>
             <TrackList 
                 tracks={props.playlistTracks}
                 isRemovable={true}
