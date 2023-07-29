@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div >
-      <h1>Ja<span className="Blue">m</span><span className="White">m</span><span className="Red">m</span>ing</h1>
+      <h1>Ja<span className="Green">mmm</span>ing</h1>
 
       <div className="App">
 

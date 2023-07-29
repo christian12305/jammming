@@ -16,7 +16,7 @@ const PlayList = (props) =>{
                 onRemove={props.onRemove}
             />
             <button className="Playlist-save" onClick={props.onSave}>
-                Save to Spotify
+                GUARDAR EN SPOTIFY
             </button>
         </div>
     );

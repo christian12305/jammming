@@ -10,20 +10,11 @@ html {
 
 h1 {
   padding: .77rem 0;
-  background-color: #010c3f;
+  background-color: white;
   text-align: center;
   font-family: 'Poppins', sans-serif;
   font-size: 1.88rem;
-  color: #fff;
-}
-
-h1 .highlight {
-  color: #6c41ec;
-}
-
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.55rem;
+  color: black;
 }
 
 .App {
@@ -35,7 +26,7 @@ h2 {
   background-repeat: no-repeat;
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
-  color: #fff;
+  color: black;
 }
 
 .App-playlist {
@@ -44,17 +35,10 @@ h2 {
   width: 100%;
 }
 
-.Red{
-  color:red;
+.Green{
+  color:rgba(10, 130, 1, 0.787);
 }
 
-.Blue{
-  color:blue;
-}
-
-.White{
-  color:white;
-}
 
 @media only screen and (max-width: 1020px) {
   .App-playlist {
