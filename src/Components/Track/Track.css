@@ -34,3 +34,12 @@
     font-weight: 300;
     color: rgba(256, 256, 256, 0.8);
   }
+
+  .Track-image{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 5%;
+    height: 25%;
+    width: 25%;
+  }
