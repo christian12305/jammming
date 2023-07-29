@@ -6,14 +6,14 @@ const Spotify = {
 
     getAccessToken(){
 
+        const accessTokenExtract = window.location.href.match(/access_token=([^&]*)/);
+        const expiresInExtract =  window.location.href.match(/expires_in=([^&]*)/);
+
         if(accessToken){
             return accessToken;
         }
 
-        const accessTokenExtract = window.location.href.match(/access_token=([^&]*)/);
-        const expiresInExtract =  window.location.href.match(/expires_in=([^&]*)/);
-
-        if(accessTokenExtract && expiresInExtract){
+        else if(accessTokenExtract && expiresInExtract){
 
             accessToken = accessTokenExtract[1];
 
@@ -27,40 +27,42 @@ const Spotify = {
             var scope = 'playlist-modify-public';
             const url = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${redirect_uri}&scope=${scope}`;
             window.location = url;
-            return false;
-        }        
+        }   
+
     },
 
-    search(input){
+    async search(input){
 
-        console.log(input);
+        accessToken = this.getAccessToken();
+        
+        try{
 
-        const accessToken = Spotify.getAccessToken();
-
-        if(accessToken){
-            return fetch(`https://api.spotify.com/v1/search?type=track&q=${input}`, {
+            const response = await fetch(`https://api.spotify.com/v1/search?type=track&q=${input}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
-            }).then(response =>{
-                return response.json();
-            }).then(jsonResponse =>{
+            });
+    
+            if(response.ok){
+                const jsonResponse = await response.json();
+    
                 if (!jsonResponse.tracks) {
                     return [];
+                }else{
+                    return jsonResponse.tracks.items.map(track => ({
+                        id: track.id,
+                        name: track.name,
+                        artist: track.artists[0].name,
+                        album: track.album.name,
+                        uri: track.uri
+                    }));    
                 }
-                return jsonResponse.tracks.items.map(track =>({
-                    id: track.id,
-                    name: track.name,
-                    artist: track.artists[0].name,
-                    album: track.album.name,
-                    uri: track.uri
-                })
-                );
-            });
+            }
+
+        }catch(e){
+
+            console.log(e)
         }
-
-        
-
     }
 
 }
