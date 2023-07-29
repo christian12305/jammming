@@ -63,6 +63,10 @@ const Spotify = {
 
             console.log(e)
         }
+    },
+
+    savePlaylist(playlistName, uris){
+        
     }
 
 }

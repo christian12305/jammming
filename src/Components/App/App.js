@@ -38,6 +38,11 @@ function App() {
 
   const savePlaylist = () =>{
     const uris = playlistTracks.map((track)=> track.uri);
+    //saves playlist and clears for a new one
+    Spotify.savePlaylist(playlistName, uris).then(()=>{
+      updateName("Nuevo Playlist");
+      setPlaylistTracks([]);
+    })
   }
 
   return (
