@@ -1,4 +1,3 @@
-import React from 'react';
 import './Track.css';
 
 const Track = (props) =>{
@@ -26,7 +25,7 @@ const Track = (props) =>{
     return (
         <div className="Track">
             <div className="Track-information">
-                <img className='Track-image' src={props.track.image}/>
+                <img className='Track-image' alt='The track cover' src={props.track.image}/>
                 <h3>{props.track.name}</h3>
                 <p>{props.track.artist} | {props.track.album}</p>
             </div>
