@@ -16,7 +16,6 @@ function App() {
 
   const search = (input) =>{
     Spotify.search(input).then(setSearchResults);
-
   }
 
   const addTrack = (track) =>{
