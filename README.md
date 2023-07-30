@@ -1,6 +1,6 @@
 # Jammming project
 
-This project created following the Jammming Codecademy's portfolio project.
+This project created following the Jammming Codecademy's portfolio project guidelines.
 
 ## Available Scripts
 
