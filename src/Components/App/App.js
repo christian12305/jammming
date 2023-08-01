@@ -15,7 +15,8 @@ function App() {
   }
 
   const search = (input) =>{
-    Spotify.search(input).then(setSearchResults);
+    if(input !== '')
+      Spotify.search(input).then(setSearchResults);
   }
 
   const addTrack = (track) =>{

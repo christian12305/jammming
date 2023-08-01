@@ -2,6 +2,7 @@ let accessToken;
 const client_id = '301a8d2713ee4ec39eac2b3f39a1b581';
 const redirect_uri = 'http://localhost:3000/';
 
+
 const Spotify = {
 
     getAccessToken(){
@@ -46,7 +47,7 @@ const Spotify = {
             if(response.ok){
                 const jsonResponse = await response.json();
     
-                if (!jsonResponse.tracks) {
+                if (jsonResponse.tracks === []) {
                     return [];
                 }else{
                     return jsonResponse.tracks.items.map(track => ({
@@ -101,7 +102,7 @@ const Spotify = {
 
                     playlistId = jsonResponseName.id;
 
-                    const responseTracks = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
+                    await fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
                         headers: headers,
                         method: 'POST',
                         body: JSON.stringify({uris: tracksUris})
