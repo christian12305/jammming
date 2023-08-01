@@ -4,6 +4,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../PlayList/PlayList';
 import Spotify from '../../Modules/Spotify';
+import Footer from '../Footer/Footer';
 
 function App() {
   const [searchResults, setSearchResults] = useState([]);
@@ -46,7 +47,7 @@ function App() {
   }
 
   return (
-    <div >
+    <div className='Background'>
       <h1>Ja<span className="Green">mmm</span>ing</h1>
 
       <div className="App">
@@ -63,9 +64,10 @@ function App() {
             onRemove={removeTrack}
             onSave={savePlaylist}
           />
-
         </div>
+        
       </div>
+      <Footer/>
     </div>
   );
 }
