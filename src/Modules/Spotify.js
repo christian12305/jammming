@@ -1,7 +1,7 @@
 let accessToken;
 const client_id = '301a8d2713ee4ec39eac2b3f39a1b581';
 //const redirect_uri = 'http://localhost:3000/';
-const redirect_uri = 'https://chris-jamming.netlify.app/'
+const redirect_uri = 'https://chris-jammming.netlify.app/'
 
 
 const Spotify = {
